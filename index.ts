@@ -10,7 +10,7 @@ async function main() {
     //Wallet Account from Petra Wallet
     const PRIVATE_KEY = new Ed25519PrivateKey("ed25519-priv-0x79fc3a1199cf848e17019a083f111258cd9ce5c455a8fda0e2ea2219a89abbe9");
 
-    // Check Balance
+    //Check Balance
     const MY_ACCOUNT = Account.fromPrivateKey({
     privateKey: PRIVATE_KEY,
     });
