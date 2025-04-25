@@ -4,7 +4,7 @@ import { AptosConfig } from "@aptos-labs/ts-sdk";
 async function main() {
 
     //Create Aptos instance and set it to testnet
-    const config = new AptosConfig({ network: Network.MAINNET });
+    const config = new AptosConfig({ network: Network.TESTNET });
     const aptos = new Aptos(config);
 
     //Wallet Account from Petra Wallet
