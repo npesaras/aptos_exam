@@ -24,7 +24,7 @@ async function main() {
         functionArguments: [
             "0x5583699c33686f47a963754eb702f662772975df43a945ed1e98043b8b5c6bdd",
             "Nilmar T. Pesaras", 
-            "<https://github.com/npesaras",
+            "https://github.com/npesaras/aptos_exam",
             "nilmar.pesarast@gmail.com",
             "nilmarp",
         ],
