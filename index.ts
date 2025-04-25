@@ -3,11 +3,11 @@ import { AptosConfig } from "@aptos-labs/ts-sdk";
 
 async function main() {
 
-    // Create Aptos instance and set it to testnet
+    //Create Aptos instance and set it to testnet
     const config = new AptosConfig({ network: Network.MAINNET });
     const aptos = new Aptos(config);
 
-    // Wallet Account from Petra Wallet
+    //Wallet Account from Petra Wallet
     const PRIVATE_KEY = new Ed25519PrivateKey("ed25519-priv-0x79fc3a1199cf848e17019a083f111258cd9ce5c455a8fda0e2ea2219a89abbe9");
 
     // Check Balance
@@ -15,7 +15,7 @@ async function main() {
     privateKey: PRIVATE_KEY,
     });
 
-    // Build the transaction
+    //Build the transaction
     const transaction = await aptos.transaction.build.simple({
         sender: MY_ACCOUNT.accountAddress,
         data: {
@@ -31,24 +31,24 @@ async function main() {
         },
     });
 
-    // Sign the transaction
+    //Sign the transaction
     const senderAuthenticator = aptos.transaction.sign({
         signer: MY_ACCOUNT,
         transaction,
     });
 
-    // Send transaction to Aptos Network
+    //Send transaction to Aptos Network
     const pendingTransaction = await aptos.transaction.submit.simple({
         transaction,
         senderAuthenticator,
     });
 
-    // Wait for the transaction to be confirmed
+    //Wait for the transaction to be confirmed
     const txnResult = await aptos.waitForTransaction({
         transactionHash: pendingTransaction.hash,
     });
     
-    // optional: so we can see if it succeeded
+    //optional: so we can see if it succeeded
     console.log(
         `Transaction completed with status: ${
             txnResult.success ? "SUCCESS" : "FAILURE"
